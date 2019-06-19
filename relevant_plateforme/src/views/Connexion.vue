@@ -26,7 +26,8 @@
                     required></v-text-field>
                 </v-flex>
                 <v-flex class="text-xs-center" mt-5>
-                  <v-btn type="submit">Sign In</v-btn>
+                  <v-btn type="submit">Sign In</v-btn><br/>
+                  or <router-link to="/Inscription">Register</router-link>
                 </v-flex>
               </v-layout>
             </form>

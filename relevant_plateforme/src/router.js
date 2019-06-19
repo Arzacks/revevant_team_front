@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Router from "vue-router";
-import Connexion from "./views/Connexion.vue";
+import Home from "./views/Accueil.vue";
 
 Vue.use(Router);
 
@@ -10,14 +10,14 @@ export default new Router({
   routes: [
     {
       path: "/",
-      name: "Connexion",
-      component: Connexion
+      name: "Accueil",
+      component: Home
     },
     {
-      path: "/Accueil",
-      name: "Accueil",
+      path: "/Connexion",
+      name: "Connexion",
       component: function() {
-        return import("./views/Accueil.vue");
+        return import("./views/Connexion.vue")
       }
     },
     {
@@ -32,6 +32,13 @@ export default new Router({
       name: "Inscription",
       component: function() {
         return import("./views/Inscription.vue");
+      }
+    },
+    {
+      path: "/Success",
+      name: "Success",
+      component: function() {
+        return import("./views/Success.vue");
       }
     }
 
