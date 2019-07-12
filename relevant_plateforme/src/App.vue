@@ -4,7 +4,8 @@
       <router-link to="/">Accueil</router-link> |
       <router-link to="/Connexion">Connexion</router-link> |
       <router-link to="/Inscription">Inscription</router-link> |
-      <router-link to="/Social">Social</router-link>
+      <router-link to="/Social">Social</router-link> |
+      <router-link to="/research">Faire une recherche</router-link>
     </div>
     <router-view />
   </div>
