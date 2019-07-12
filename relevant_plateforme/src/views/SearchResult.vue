@@ -2,18 +2,11 @@
 	<v-container fill-height fluid class="search-result">
 		<v-layout align-center justify-center wrap>
 			<v-flex md12 class="block">
-				<h1>Search result for " {{ search }} "</h1>
+				<h1>Search result for your research</h1>
 			</v-flex>
 		</v-layout>
 	</v-container>
 </template>
-
-<script>
-export default {
-	data () {
-	}
-};
-</script>
 
 <style lang="css">
 .block {

@@ -22,22 +22,6 @@
 	</v-container>
 </template>
 
-<script>
-// export default{
-	// data () {
-	// 	search: null
-	// 	return search
-	// },
-	// methods: {
-	// 	fonction: function(){
-	// 		if (!this.search)
-	// 			alert("The field is empty");
-	// 		alert(this.search);
-	// 	}
-	// }
-// };
-</script>
-
 <style lang="css">
 .block {
 	display: block;
