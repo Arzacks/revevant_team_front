@@ -44,3 +44,37 @@
 	</div>
 </template>
 
+<script>
+  export default {
+    data() {
+      return {
+        quote: ''
+      }
+    },
+
+    methods: {
+      handleClick: function(text) {
+        const axios = require('axios');
+
+        alert(text)
+        axios.get('/api/user', {
+          params: {
+            ID: 12345
+          }
+        })
+        .then(function (response) {
+          if (response != undefined) {
+            console.log("all good")
+          }
+        })
+        .catch(function (error) {
+          console.log(error);
+        })
+        .then(function () {
+          // always executed
+        });  
+
+      },
+    }
+}
+</script>
