@@ -15,7 +15,7 @@
                 <v-text-field name="password" label="Password" id="password" type="password" required></v-text-field>
               </v-flex>
               <v-flex class="text-xs-center" mt-5>
-                <v-btn @click="handleClick('something')" type="submit">Sign In</v-btn><br/>
+                <v-btn @click="handleClick()" type="submit">Sign In</v-btn>
                 or <router-link to="/Inscription">Register</router-link>
               </v-flex>
             </v-layout>
@@ -30,33 +30,35 @@
   export default {
     data() {
       return {
-        quote: ''
+        el: '#app',
+        data: {
+          value: 'Initial value'
+        },
       }
     },
 
     methods: {
-      handleClick: function(text) {
-        const axios = require('axios');
+      handleClick: function() {
+        const pass = document.getElementById("password").value
+        const email = document.getElementById("email").value
 
-        alert(text)
-        axios.get('/api/user', {
-          params: {
-            ID: 12345
-          }
+        console.log("totototo = ", email, pass)
+        const axios = require("axios");
+        axios.post('https://relevant.cynnfx.fr/api/login', {
+          email: "juan.billet@epitech.eu",
+          password: "toto",
         })
         .then(function (response) {
-          if (response != undefined) {
-            console.log("all good")
-          }
+          //window.location.href = '/Research'
+          console.log("toto = ", response);
+          console.log("email = ",  document.getElementById("password").value)
         })
         .catch(function (error) {
-          console.log(error);
-        })
-        .then(function () {
-          // always executed
-        });  
-
+          console.log("error = ", error);
+        });
       },
     }
 }
 </script>
+
+
