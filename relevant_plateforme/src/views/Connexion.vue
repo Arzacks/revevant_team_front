@@ -15,7 +15,7 @@
                 <v-text-field name="password" label="Password" id="password" type="password" required></v-text-field>
               </v-flex>
               <v-flex class="text-xs-center" mt-5>
-                <v-btn @click="handleClick()" type="submit">Sign In</v-btn>
+                <v-btn @click="handleClick()">Sign In</v-btn>
                 or <router-link to="/Inscription">Register</router-link>
               </v-flex>
             </v-layout>
@@ -28,37 +28,27 @@
 
 <script>
   export default {
-    data() {
-      return {
-        el: '#app',
-        data: {
-          value: 'Initial value'
-        },
-      }
-    },
 
     methods: {
       handleClick: function() {
+
         const pass = document.getElementById("password").value
         const email = document.getElementById("email").value
 
         console.log("totototo = ", email, pass)
-        const axios = require("axios");
+        const axios = require("axios")
         axios.post('https://relevant.cynnfx.fr/api/login', {
-          email: "juan.billet@epitech.eu",
-          password: "toto",
+          email: email,
+          password: pass,
         })
         .then(function (response) {
-          //window.location.href = '/Research'
-          console.log("toto = ", response);
-          console.log("email = ",  document.getElementById("password").value)
+          window.location.href = '/research'
+          console.log("toto = ", response)
         })
         .catch(function (error) {
-          console.log("error = ", error);
-        });
+          console.log("error = ", error)
+        })
       },
     }
-}
+  }
 </script>
-
-

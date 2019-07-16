@@ -10,30 +10,20 @@
                     	<form>
                         	<v-layout column>
                             	<v-flex>
-									<v-text-field
-										label="E-mail"
-										required
-									></v-text-field>
+									<v-text-field label="E-mail" id="email" required></v-text-field>
 								</v-flex>
 								<v-flex>
-									<v-text-field
-										ref="password"
-										type="password"
-										label="Pass"
-										required>
-									</v-text-field>
+									<v-text-field type="password" label="Pass" id="password" required></v-text-field>
 								</v-flex>
 								<v-flex>
-									<v-text-field
-										v-model="pass2"
-										type="password"
-										label="Password Confirmation"
-										data-vv-name="pass"
-										required>
-									</v-text-field>
+									<v-text-field type="password" label="Password Confirmation" id="passwordConfirmation" required> </v-text-field>
 								</v-flex>
+								<v-flex>
+									<v-text-field label="Name" id="name" required></v-text-field>
+								</v-flex>
+
 								<v-flex class="text-xs-center" mt-5>
-									<v-btn type="submit" to="/Success">Register</v-btn>
+									<v-btn  @click="handleClick()">Register</v-btn>
 								</v-flex>
 							</v-layout>							
 						</form>
@@ -46,35 +36,29 @@
 
 <script>
   export default {
-    data() {
-      return {
-        quote: ''
-      }
-    },
 
     methods: {
-      handleClick: function(text) {
-        const axios = require('axios');
+      handleClick: function() {
 
-        alert(text)
-        axios.get('/api/user', {
-          params: {
-            ID: 12345
-          }
+        const pass = document.getElementById("password").value
+		const email = document.getElementById("email").value
+		const name = document.getElementById("name").value
+
+        console.log("totototo = ", email, pass)
+        const axios = require("axios")
+        axios.post('https://relevant.cynnfx.fr/api/register', {
+          email: email,
+		  password: pass,
+		  name: name
         })
         .then(function (response) {
-          if (response != undefined) {
-            console.log("all good")
-          }
+          window.location.href = '/Success'
+          console.log("toto = ", response)
         })
         .catch(function (error) {
-          console.log(error);
+          console.log("error = ", error)
         })
-        .then(function () {
-          // always executed
-        });  
-
       },
     }
-}
+  }
 </script>
