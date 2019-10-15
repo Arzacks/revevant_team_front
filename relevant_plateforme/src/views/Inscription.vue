@@ -1,35 +1,33 @@
 <template>
 	<div class="Inscription">
 		<template>
-			<v-container fluid>
-				<v-layout row wrap>
-					<v-flex xs12 class="text-xs-center" mt-5>
-                    	<h1>Register</h1>
-					</v-flex>
-            		<v-flex xs10 sm6 offset-sm3 mt->
-                    	<form>
-                        	<v-layout column>
-                            	<v-flex>
-									<v-text-field label="E-mail" id="email" required></v-text-field>
-								</v-flex>
-								<v-flex>
-									<v-text-field type="password" label="Pass" id="password" required></v-text-field>
-								</v-flex>
-								<v-flex>
-									<v-text-field type="password" label="Password Confirmation" id="passwordConfirmation" required> </v-text-field>
-								</v-flex>
-								<v-flex>
-									<v-text-field label="Name" id="name" required></v-text-field>
-								</v-flex>
-
-								<v-flex class="text-xs-center" mt-5>
-									<v-btn  @click="handleClick()">Register</v-btn>
-								</v-flex>
-							</v-layout>							
-						</form>
-					</v-flex>
-				</v-layout>
-			</v-container>
+			<v-layout row wrap>
+				<v-flex xs10 sm4 offset-sm4 mt-0>
+					<form id="register">
+						<v-flex xs12 class="text-xs-center" mt-0>
+							<h1 id="title">Register</h1>
+						</v-flex>
+						<v-layout column>
+							<v-flex xs10 sm8 offset-sm2 mt-0>
+								<v-text-field class="input-txt" label="E-mail" id="email" required></v-text-field>
+							</v-flex>
+							<v-flex xs10 sm8 offset-sm2 mt-0>
+								<v-text-field class="input-txt" type="password" label="Pass" id="password" required></v-text-field>
+							</v-flex>
+							<v-flex xs10 sm8 offset-sm2 mt-0>
+								<v-text-field class="input-txt" type="password" label="Password Confirmation" id="passwordConfirmation" required> </v-text-field>
+							</v-flex>
+							<v-flex xs10 sm8 offset-sm2 mt-0>
+								<v-text-field class="input-txt" label="Name" id="name" required></v-text-field>
+							</v-flex>
+							<v-flex xs10 sm4 offset-sm6 mt-0>
+								<v-btn id="btn-submit" @click="handleClick()">Submit</v-btn>
+								<h6 id="text">Already have an account ?</h6>
+							</v-flex>
+						</v-layout>
+					</form>
+				</v-flex>
+			</v-layout>
 		</template>
 	</div>
 </template>
@@ -62,3 +60,31 @@
     }
   }
 </script>
+
+<style>
+	.Inscription {
+		background: #009AD3;
+	}
+
+	#title {
+		padding-top: 15px;
+	}
+
+	#register {
+		background: #BEE6F4;
+		border-radius: 40px;
+	}
+
+	#text {
+		padding-bottom: 5px;
+	}
+
+	.input-txt {
+		width: 80%;
+	}
+
+	#btn-submit {
+		background: #BEE6F4;
+	}
+
+</style>
